@@ -1,0 +1,10 @@
+project: savantenvs/nodogsplash
+target: fuzz_conf
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_conf/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_conf @@
+    afl: true
+    dictionary: /mayhem/mayhem/fuzz_conf/fuzz_conf.dict
+    timeout: 5

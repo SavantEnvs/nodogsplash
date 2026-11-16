@@ -1,0 +1,10 @@
+project: savantenvs/nodogsplash
+target: fuzz_state_file
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_state_file/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_state_file
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_state_file/fuzz_state_file.dict
+    timeout: 5
